@@ -1,0 +1,162 @@
+{
+  "project": {
+    "name": "Untitled Project",
+    "start": "2026-02-23"
+  },
+  "tasks": [
+    {
+      "id": 1776676683599.9133,
+      "name": "Site Preparation & Groundworks",
+      "start": "2026-02-23",
+      "finish": "2026-03-07",
+      "duration": 13,
+      "progress": 0,
+      "color": "#26a269",
+      "deps": []
+    },
+    {
+      "id": 1776676683608.3389,
+      "name": "Foundation & Structural Works",
+      "start": "2026-03-09",
+      "finish": "2026-03-28",
+      "duration": 20,
+      "progress": 0,
+      "color": "#26a269",
+      "deps": [
+        1776676683599.9133
+      ]
+    },
+    {
+      "id": 1776676683616.2751,
+      "name": "Formwork",
+      "start": "2026-03-30",
+      "finish": "2026-04-04",
+      "duration": 6,
+      "progress": 0,
+      "color": "#26a269",
+      "deps": [
+        1776676683608.3389
+      ]
+    },
+    {
+      "id": 1776678002567.3105,
+      "name": "Concrete Work",
+      "start": "2026-04-06",
+      "finish": "2026-04-18",
+      "duration": 13,
+      "progress": 0,
+      "color": "#26a269",
+      "deps": [
+        1776676683616.2751
+      ]
+    },
+    {
+      "id": 1776678083542.412,
+      "name": "Wall Construction & Plastering",
+      "start": "2026-04-20",
+      "finish": "2026-05-16",
+      "duration": 27,
+      "progress": 0,
+      "color": "#1f77b4",
+      "deps": [
+        1776678002567.3105
+      ]
+    },
+    {
+      "id": 1776678098359.1892,
+      "name": "Roof Installation",
+      "start": "2026-04-20",
+      "finish": "2026-05-02",
+      "duration": 13,
+      "progress": 0,
+      "color": "#1f77b4",
+      "deps": [
+        1776678002567.3105
+      ]
+    },
+    {
+      "id": 1776678109830.659,
+      "name": "Ceiling Installation",
+      "start": "2026-05-04",
+      "finish": "2026-05-16",
+      "duration": 13,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [
+        1776678098359.1892
+      ]
+    },
+    {
+      "id": 1776678125335.1084,
+      "name": "Piping and MEP Works",
+      "start": "2026-05-18",
+      "finish": "2026-05-30",
+      "duration": 13,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [
+        1776678109830.659
+      ]
+    },
+    {
+      "id": 1776678139767.5652,
+      "name": "Painting & Finishing",
+      "start": "2026-05-18",
+      "finish": "2026-05-30",
+      "duration": 13,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [
+        1776678083542.412
+      ]
+    },
+    {
+      "id": 1776678151766.5325,
+      "name": "Doors and Windows",
+      "start": "2026-05-18",
+      "finish": "2026-05-23",
+      "duration": 6,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [
+        1776678083542.412
+      ]
+    },
+    {
+      "id": 1776678164608.9238,
+      "name": "Wall & Floor Tiling",
+      "start": "2026-06-01",
+      "finish": "2026-06-13",
+      "duration": 13,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [
+        1776678139767.5652
+      ]
+    },
+    {
+      "id": 1776678170384.7434,
+      "name": "M&E",
+      "start": "2026-06-15",
+      "finish": "2026-07-11",
+      "duration": 27,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [
+        1776678164608.9238
+      ]
+    },
+    {
+      "id": 1776678190192.4692,
+      "name": "Final Inspection & Handover",
+      "start": "2026-07-13",
+      "finish": "2026-07-18",
+      "duration": 6,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [
+        1776678170384.7434
+      ]
+    }
+  ]
+}

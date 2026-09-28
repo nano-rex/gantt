@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Gantt Chart Creator — File Read/Write</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<h3>Gantt Chart Creator — File Read/Write</h3>
+
+<div class="controls-row" style="display:flex; gap:8px; align-items:center;">
+  <div class="controls">
+    <label>Project name: <input id="projectName" placeholder="Project"></label>
+    <label>Project start: <input id="projectStart" type="date"></label>
+  </div>
+
+  <div style="margin-left:auto; display:flex; gap:8px; align-items:center;">
+    <div class="toolbar">
+      <button id="newFile" class="small">New</button>
+      <button id="openFile" class="small">Open JSON</button>
+      <button id="saveFile" class="small">Save</button>
+      <label style="display:flex; align-items:center; gap:4px; font-size:12px;">
+        Days/page
+        <input id="pngPageDays" type="number" min="1" value="30" style="width:64px">
+      </label>
+      <button id="exportPng" class="small">Export PNG</button>
+      <button id="exportPdf" class="small">Export PDF</button>
+      <button id="zoomIn" class="small">Zoom In</button>
+      <button id="zoomOut" class="small">Zoom Out</button>
+    </div>
+    <span id="fileName" class="file-indicator">No file</span>
+  </div>
+</div>
+
+<div class="task-create-panel">
+  <div class="task-create-title">New Task</div>
+  <div class="task-create-fields">
+    <label>Task name: <input id="taskName" placeholder="Task"></label>
+    <label>Start: <input id="startDate" type="date"></label>
+    <label>Finish: <input id="finishDate" type="date"></label>
+    <label>Duration (days): <input id="duration" type="number" min="1" value="1" style="width:80px" readonly class="readonly"></label>
+    <label>Progress (%): <input id="progress" type="number" min="0" max="100" value="0" style="width:80px"></label>
+    <label>Color: <input id="color" type="color" value="#1f77b4"></label>
+    <button id="addBtn" class="small">Add Task</button>
+  </div>
+</div>
+
+<div id="canvas">
+  <svg id="links" class="dependency-links"></svg>
+  <div id="grid" class="grid"></div>
+  <div id="vgrid" class="grid-vertical"></div>
+</div>
+
+<div style="margin-top:12px;">
+  <strong>JSON Data</strong><br>
+  <textarea id="jsonOut" placeholder="JSON appears here"></textarea>
+  <input id="fileInput" type="file" accept=".json" style="display:none">
+</div>
+
+<!-- Modal template -->
+<div id="editModal" style="display:none">
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true">
+      <h4>Edit Task</h4>
+      <div class="modal-row">
+        <label>Name: <input id="modalName" type="text"></label>
+      </div>
+      <div class="modal-row">
+        <label>Start: <input id="modalStart" type="date"></label>
+      </div>
+      <div class="modal-row">
+        <label>Finish: <input id="modalFinish" type="date"></label>
+      </div>
+      <div class="modal-row">
+        <label>Duration: <input id="modalDuration" type="number" min="1"></label>
+      </div>
+      <div class="modal-row">
+        <label>Progress (%): <input id="modalProgress" type="number" min="0" max="100"></label>
+      </div>
+      <div class="modal-row">
+        <label>Depends on: <input id="modalDeps" type="text" placeholder="2, 4"></label>
+      </div>
+      <div class="modal-row">
+        <label>Color: <input id="modalColor" type="color"></label>
+      </div>
+      <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:8px;">
+        <button id="modalCancel" class="small">Cancel</button>
+        <button id="modalSave" class="small">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="png-export.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

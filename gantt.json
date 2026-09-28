@@ -1,0 +1,268 @@
+{
+  "project": {
+    "name": "Untitled Project",
+    "start": "2026-02-23"
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Piling",
+      "start": "2026-03-23",
+      "finish": "2026-05-04",
+      "duration": 43,
+      "progress": 0,
+      "color": "#26a269",
+      "deps": []
+    },
+    {
+      "id": 2,
+      "name": "Underground Pipe",
+      "start": "2026-03-29",
+      "finish": "2026-05-17",
+      "duration": 50,
+      "progress": 0,
+      "color": "#26a269",
+      "deps": [1]
+    },
+    {
+      "id": 3,
+      "name": "Crush Run & Compaction Works",
+      "start": "2026-04-02",
+      "finish": "2026-05-30",
+      "duration": 59,
+      "progress": 0,
+      "color": "#26a269",
+      "deps": [2]
+    },
+    {
+      "id": 4,
+      "name": "Anti-Termite Treatment",
+      "start": "2026-04-05",
+      "finish": "2026-05-23",
+      "duration": 49,
+      "progress": 0,
+      "color": "#26a269",
+      "deps": [3]
+    },
+    {
+      "id": 5,
+      "name": "Lean Concrete",
+      "start": "2026-04-05",
+      "finish": "2026-05-23",
+      "duration": 49,
+      "progress": 0,
+      "color": "#26a269",
+      "deps": [4]
+    },
+    {
+      "id": 6,
+      "name": "PE Sheet",
+      "start": "2026-04-06",
+      "finish": "2026-05-24",
+      "duration": 49,
+      "progress": 0,
+      "color": "#1f77b4",
+      "deps": [4]
+    },
+    {
+      "id": 7,
+      "name": "Footing",
+      "start": "2026-04-07",
+      "finish": "2026-05-28",
+      "duration": 52,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [6]
+    },
+    {
+      "id": 8,
+      "name": "BRC",
+      "start": "2026-04-06",
+      "finish": "2026-05-24",
+      "duration": 49,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [7]
+    },
+    {
+      "id": 9,
+      "name": "Concrete Mix",
+      "start": "2026-04-08",
+      "finish": "2026-05-30",
+      "duration": 53,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [8]
+    },
+    {
+      "id": 10,
+      "name": "Columns",
+      "start": "2026-04-26",
+      "finish": "2026-05-22",
+      "duration": 27,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [9]
+    },
+    {
+      "id": 11,
+      "name": "Roof Beams",
+      "start": "2026-04-13",
+      "finish": "2026-05-26",
+      "duration": 44,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [10]
+    },
+    {
+      "id": 12,
+      "name": "Brick Wall / Door / Window Frame",
+      "start": "2026-04-26",
+      "finish": "2026-07-26",
+      "duration": 92,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [11]
+    },
+    {
+      "id": 13,
+      "name": "Roofing",
+      "start": "2026-04-22",
+      "finish": "2026-07-26",
+      "duration": 96,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [12]
+    },
+    {
+      "id": 14,
+      "name": "External Roof Ceiling",
+      "start": "2026-04-22",
+      "finish": "2026-07-26",
+      "duration": 96,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [13]
+    },
+    {
+      "id": 15,
+      "name": "M&E Rough-In",
+      "start": "2026-04-22",
+      "finish": "2026-08-30",
+      "duration": 131,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [12, 13]
+    },
+    {
+      "id": 16,
+      "name": "Internal Ceiling",
+      "start": "2026-04-26",
+      "finish": "2026-07-26",
+      "duration": 92,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [13]
+    },
+    {
+      "id": 17,
+      "name": "Yard Waterproofing / Manhole",
+      "start": "2026-04-20",
+      "finish": "2026-07-20",
+      "duration": 92,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [13]
+    },
+    {
+      "id": 18,
+      "name": "Plastering",
+      "start": "2026-05-06",
+      "finish": "2026-07-30",
+      "duration": 86,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [15]
+    },
+    {
+      "id": 19,
+      "name": "Skimcoat",
+      "start": "2026-05-06",
+      "finish": "2026-07-30",
+      "duration": 86,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [18]
+    },
+    {
+      "id": 20,
+      "name": "Tiling",
+      "start": "2026-05-06",
+      "finish": "2026-08-15",
+      "duration": 102,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [19]
+    },
+    {
+      "id": 21,
+      "name": "Gutter Down Pipe",
+      "start": "2026-05-06",
+      "finish": "2026-07-30",
+      "duration": 86,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [13]
+    },
+    {
+      "id": 22,
+      "name": "Drain",
+      "start": "2026-08-15",
+      "finish": "2026-08-31",
+      "duration": 17,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [17]
+    },
+    {
+      "id": 23,
+      "name": "Painting",
+      "start": "2026-08-15",
+      "finish": "2026-08-26",
+      "duration": 12,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [19]
+    },
+    {
+      "id": 24,
+      "name": "Door & Ironmongery",
+      "start": "2026-08-01",
+      "finish": "2026-08-15",
+      "duration": 15,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [20, 23]
+    },
+    {
+      "id": 25,
+      "name": "Wash Tank / Sink Fitting / Window Panel Installation",
+      "start": "2026-08-01",
+      "finish": "2026-08-15",
+      "duration": 15,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [15, 20, 23]
+    },
+    {
+      "id": 26,
+      "name": "Concrete Imprint",
+      "start": "2026-08-15",
+      "finish": "2026-08-31",
+      "duration": 17,
+      "progress": 0,
+      "color": "#ff7f0e",
+      "deps": [17, 22]
+    }
+  ]
+}

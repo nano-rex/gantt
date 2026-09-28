@@ -1,0 +1,189 @@
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin: 12px; }
+  .controls { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; align-items:center; }
+  label { font-size:13px; }
+  input, select, button { padding:6px 8px; font-size:13px; }
+  #canvas { border:1px solid #cfcfcf; overflow:auto; height:520px; position:relative; background:#fff; }
+  .grid { position:relative; min-width:1000px; padding:0; }
+  .row { display:flex; align-items:center; height:68px; position:relative; border-bottom:1px solid #e6e6e6; }
+  .row:nth-child(even) { background: #fbfbfb; }
+  .task-bar {
+    position:absolute; height:30px; top:18px; border-radius:4px; color:#111827; display:flex; align-items:center;
+    font-size:13px; padding:0 8px; box-sizing:border-box; cursor:move; user-select:none; box-shadow:0 1px 2px rgba(0,0,0,0.08);
+    overflow:hidden;
+    z-index:3;
+  }
+  .task-bar-fill {
+    position:absolute;
+    inset:0 auto 0 0;
+    border-radius:inherit;
+    pointer-events:none;
+    opacity:0.9;
+  }
+  .task-bar-label {
+    position:relative;
+    z-index:1;
+    min-width:0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  .task-bar-progress {
+    position:relative;
+    z-index:1;
+    margin-left:auto;
+    font-size:11px;
+    font-weight:600;
+    opacity:0.95;
+    padding-left:8px;
+    white-space:nowrap;
+  }
+  .task-bar.drag-link-source { outline:2px solid #0f766e; outline-offset:1px; }
+  .task-bar.link-hover { outline:2px dashed #0f766e; outline-offset:1px; }
+  .link-handle {
+    position:absolute;
+    width:14px;
+    height:14px;
+    right:-7px;
+    top:8px;
+    border-radius:999px;
+    background:#fff;
+    border:2px solid rgba(17,24,39,0.85);
+    box-sizing:border-box;
+    cursor:grab;
+    z-index:4;
+  }
+  .link-handle:active { cursor:grabbing; }
+  .resizer { width:8px; height:100%; position:absolute; right:0; top:0; cursor:ew-resize; background:rgba(0,0,0,0.15); border-top-right-radius:4px; border-bottom-right-radius:4px; }
+  .dates { display:flex; gap:4px; padding:6px 0 8px 300px; font-size:12px; color:#444; }
+  .row-label {
+    width:300px;
+    padding:8px 8px 8px 10px;
+    font-size:13px;
+    color:#333;
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    box-sizing:border-box;
+    position:sticky;
+    left:0;
+    z-index:4;
+    background:#fff;
+    border-right:1px solid #e6e6e6;
+    background-clip: padding-box;
+  }
+  .reorder-handle {
+    width:12px;
+    height:30px;
+    border-radius:6px;
+    flex:0 0 auto;
+    margin-top:6px;
+    background:
+      linear-gradient(to bottom, rgba(17,24,39,0.35), rgba(17,24,39,0.35)) center 7px / 6px 1px no-repeat,
+      linear-gradient(to bottom, rgba(17,24,39,0.35), rgba(17,24,39,0.35)) center 14px / 6px 1px no-repeat,
+      linear-gradient(to bottom, rgba(17,24,39,0.35), rgba(17,24,39,0.35)) center 21px / 6px 1px no-repeat;
+    cursor:grab;
+  }
+  .reorder-handle:active { cursor:grabbing; }
+  .row:nth-child(even) .row-label { background:#fbfbfb; }
+  .task-number {
+    width:24px; height:24px; border-radius:999px; background:#111; color:#fff; font-size:12px;
+    display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto; margin-top:2px;
+  }
+  .task-meta { min-width:0; flex:1; display:flex; flex-direction:column; gap:2px; }
+  .task-title {
+    font-size:13px;
+    font-weight:600;
+    color:#222;
+    line-height:1.2;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .task-details { font-size:11px; color:#5f5f5f; line-height:1.25; }
+  .task-deps { font-size:11px; color:#7a5c00; line-height:1.25; }
+  .reorder-indicator {
+    position:absolute;
+    left:0;
+    right:0;
+    height:0;
+    border-top:3px solid #0f766e;
+    box-shadow:0 0 0 1px rgba(15,118,110,0.18);
+    pointer-events:none;
+    z-index:6;
+    display:none;
+  }
+  .header { position:sticky; top:0; background:#fff; z-index:5; border-bottom:2px solid #e6e6e6; }
+  .month-row, .day-row { display:flex; gap:0; padding-left:300px; }
+  .month-row {
+    height:22px;
+    background:#fafafa;
+    border-bottom:1px solid #e6e6e6;
+    font-size:12px;
+    font-weight:600;
+    color:#444;
+  }
+  .day-row {
+    height:30px;
+  }
+  .month-cell, .day-cell {
+    box-sizing:border-box;
+    border-right:1px solid #f0f0f0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+  }
+  .month-cell {
+    padding:0 8px;
+    white-space:nowrap;
+  }
+  .day-cell {
+    width:40px;
+    padding:3px 0 4px;
+    font-size:12px;
+    color:#666;
+    white-space:pre-line;
+    line-height:1.05;
+  }
+  .toolbar { display:flex; gap:6px; }
+  .task-create-panel {
+    margin:12px 0;
+    padding:12px;
+    border:1px solid #e5e7eb;
+    border-radius:8px;
+    background:#fafafa;
+  }
+  .task-create-title {
+    font-size:12px;
+    font-weight:700;
+    color:#374151;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin-bottom:8px;
+  }
+  .task-create-fields {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  .task-actions { display:flex; gap:6px; }
+  textarea { width:360px; height:120px; font-family:monospace; }
+  .small { font-size:12px; padding:4px 6px; }
+  .status-pill {
+    font-size:12px;
+    padding:4px 8px;
+    border-radius:999px;
+    background:#f3f4f6;
+    color:#374151;
+  }
+  .grid-vertical { position:absolute; top:0; left:300px; height:100%; z-index:1; pointer-events:none; }
+  .grid-vertical .v { position:absolute; top:0; bottom:0; width:1px; background:rgba(0,0,0,0.06); }
+  .dependency-links { position:absolute; top:0; left:0; pointer-events:none; z-index:2; overflow:visible; }
+  .modal-backdrop { position:fixed; inset:0; background:rgba(0,0,0,0.35); display:flex; align-items:center; justify-content:center; z-index:1000; }
+  .modal { background:#fff; padding:16px; border-radius:8px; width:360px; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+  .modal h4 { margin:0 0 8px 0; font-size:16px; }
+  .modal-row { display:flex; gap:8px; margin-bottom:8px; align-items:center; }
+  .modal-row label { width:100%; font-size:13px; display:flex; flex-direction:column; gap:4px; }
+  .modal-row .readonly { background:#f6f6f6; color:#444; }
+  .file-indicator { font-size:13px; color:#444; margin-left:8px; }
